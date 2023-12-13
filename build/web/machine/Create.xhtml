@@ -24,8 +24,11 @@
                         <p:selectOneMenu id="employe" value="#{machineController.selected.employe}" >
                             <f:selectItems value="#{employeController.itemsAvailableSelectOne}"
                                            var="employeItem"
-                                           itemValue="#{employeItem}"/>
+                                           itemValue="#{employeItem}"
+                                           itemLabel="#{employeItem.nom}"/>
                         </p:selectOneMenu>
+ 
+
                     </p:panelGrid>
                     <p:commandButton actionListener="#{machineController.create}" value="#{bundle.Save}" update="display,:MachineListForm:datalist,:growl" oncomplete="handleSubmit(args,'MachineCreateDialog');"/>
                     <p:commandButton value="#{bundle.Cancel}" onclick="MachineCreateDialog.hide()"/>
